@@ -14,6 +14,7 @@ const cartRoutes = require("./routes/cartRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const contactController = require("./routes/messageRoute");
 const virtualTourRoutes = require("./routes/virtualTourRoutes");
+const propertyRoutes = require("./routes/propert.Routes")
 
 const app = express();
 
@@ -39,7 +40,7 @@ app.use("/api/cart", cartRoutes);
 app.use("/api/contact", contactController);
 app.use("/api/banner", bannerRoutes);
 app.use("/api/virtualTours", virtualTourRoutes);
-
+app.use("/api/property", propertyRoutes);
 // Database connection
 dbconnection();
 

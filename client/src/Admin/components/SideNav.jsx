@@ -42,6 +42,11 @@ import AnalyticsIcon from "@mui/icons-material/Analytics";
 import GroupIcon from "@mui/icons-material/Group";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import PersonIcon from "@mui/icons-material/Person";
+import PersonPinIcon from "@mui/icons-material/PersonPin";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import AddBusinessIcon from "@mui/icons-material/AddBusiness";
+import ChatIcon from "@mui/icons-material/Chat";
+import LogoutIcon from "@mui/icons-material/Logout";
 import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { clearPersistedUser, logoutUser } from "../../redux/Slices/userSlice";
@@ -139,6 +144,24 @@ function SideNav(props) {
         <ListItem disablePadding>
           <ListItemButton component={Link} to="allproduct">
             <ListItemIcon>
+              <ApartmentIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Property List"} />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="add-property">
+            <ListItemIcon>
+              <AddBusinessIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Add Property"} />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="allproduct">
+            <ListItemIcon>
               <AppsIcon />
             </ListItemIcon>
             <ListItemText primary={"Products"} />
@@ -148,7 +171,7 @@ function SideNav(props) {
         <ListItem disablePadding>
           <ListItemButton component={Link} to="addproduct">
             <ListItemIcon>
-              <AddIcon />
+              <AddBusinessIcon />
             </ListItemIcon>
             <ListItemText primary={"Add Product"} />
           </ListItemButton>
