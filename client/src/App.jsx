@@ -43,7 +43,7 @@ import VerificationEmailResend from "./Admin/Pages/VerificationEmailResend.jsx";
 import AddBanner from "./Admin/Pages/addbanner.jsx";
 import AddVirtualTourForm from "./Admin/Pages/virtualTours/AddVirtualTourForm.jsx";
 import SellerAllVirtualTours from "./Admin/Pages/virtualTours/SellerAllVirtualTours.jsx";
-import SellerVitualTourDetail from "./Admin/Pages/virtualTours/SellerVitualTourDetail.jsx";
+import AddProperty from "./Admin/Pages/Property/AddPropert.jsx";
 
 const VERIFY_API = `${
   import.meta.env.VITE_BACKEND_DOMAIN_NAME
@@ -116,6 +116,8 @@ export default function App() {
                 path="SellerAllVirtualTours"
                 element={<SellerAllVirtualTours />}
               />
+              <Route path="add-property" element={<AddProperty />} />
+
               <Route
                 path="customerOrderHistoryPage/:id"
                 element={<CustomerOrderHistoryPage />}

@@ -13,10 +13,6 @@ module.exports = {
 
     console.log(files);
     console.log(req.uniqueIdentifier);
-
- 
-
-
     try {
       // Create an array to store file details
       const fileDetails = await Promise.all(
