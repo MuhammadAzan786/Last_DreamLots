@@ -1,0 +1,52 @@
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.page-item {
+  width: 35px; /* Set the width to make it square */
+  height: 35px; /* Set the height to make it square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  margin: 0 5px; /* Add space between items */
+  cursor: pointer;
+  border-radius: 1px;
+  background-color: white;
+  transition: all 0.1s ease; /* Smooth transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.007); /* Add a subtle shadow */
+}
+
+.page-item:hover {
+  background-color: #f7a400; /* Blue background on hover */
+  color: white; /* White text on hover */
+  border-color: #f7a400; /* Match border color on hover */
+  transform: scale(1.1); /* Slight scale effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhance the shadow */
+}
+
+.active-page {
+  background-color: #0b355b; /* Active page background */
+  color: white; /* Active page text color */
+  border-color: #0b355b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on active */
+  transform: scale(1.05); /* Slight scale effect for active state */
+}
+
+.icon-style {
+  cursor: pointer;
+  transition: all 0.1s ease, transform 0.1s ease; /* Smooth transitions */
+}
+
+.icon-style-active {
+  color: #f7a400; /* Active icon color */
+  transform: scale(1.1); /* Slight scale effect for active icon */
+}
+
+.icon-style:hover {
+  color: #f7a400; /* Blue color on hover */
+  transform: scale(1.2); /* Slight scale on hover */
+  transition: all 0.1s ease
+}
