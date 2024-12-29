@@ -44,6 +44,7 @@ import AddBanner from "./Admin/Pages/addbanner.jsx";
 import AddVirtualTourForm from "./Admin/Pages/virtualTours/AddVirtualTourForm.jsx";
 import SellerAllVirtualTours from "./Admin/Pages/virtualTours/SellerAllVirtualTours.jsx";
 import AddProperty from "./Admin/Pages/Property/AddPropert.jsx";
+import SellerVitualTourDetail from "./Admin/Pages/virtualTours/SellerVitualTourDetail.jsx";
 
 const VERIFY_API = `${
   import.meta.env.VITE_BACKEND_DOMAIN_NAME
