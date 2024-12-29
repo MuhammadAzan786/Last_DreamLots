@@ -45,6 +45,7 @@ import AddVirtualTourForm from "./Admin/Pages/virtualTours/AddVirtualTourForm.js
 import SellerAllVirtualTours from "./Admin/Pages/virtualTours/SellerAllVirtualTours.jsx";
 import AddProperty from "./Admin/Pages/Property/AddPropert.jsx";
 import SellerVitualTourDetail from "./Admin/Pages/virtualTours/SellerVitualTourDetail.jsx";
+import Sellers from "./Admin/Pages/SuperAdmin/Sellers.jsx";
 
 const VERIFY_API = `${
   import.meta.env.VITE_BACKEND_DOMAIN_NAME
@@ -89,7 +90,7 @@ export default function App() {
         </Route>
 
         {/* Protected Routes (Based on role) */}
-        {user.data?.role === "admin" ? (
+        {user.data?.role === "admin" || user.data?.role === "superAdmin" ? (
           <>
             <Route path="/admin" element={<SideNav />}>
               <Route index element={<Dashboard />} />
@@ -108,6 +109,7 @@ export default function App() {
               <Route path="messages" element={<Messages />} />
               <Route path="customers" element={<Customers />} />
               <Route path="addbanner" element={<AddBanner />} />
+              <Route path="sellers" element={<Sellers />} />
               <Route path="addVirtualTour" element={<AddVirtualTourForm />} />
               <Route
                 path="SellerAllVirtualTours/virtualTourDetail/:id"

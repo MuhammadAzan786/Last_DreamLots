@@ -162,12 +162,10 @@ module.exports = {
       const user = await authenticationModel.findOne({ email });
 
       if (!user) {
-        return res
-          .status(404)
-          .json({
-            message:
-              "No account exists associated with the provided email address.",
-          });
+        return res.status(404).json({
+          message:
+            "No account exists associated with the provided email address.",
+        });
       }
 
       // Check if the user is already verified
@@ -302,6 +300,52 @@ module.exports = {
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: "Error in checking authentication" });
+    }
+  }),
+
+  sellers: asyncHandler(async (req, res) => {
+    try {
+      // Fetch records where the role is not "superAdmin"
+      const sellers = await authenticationModel.find({
+        role: { $ne: "superAdmin" },
+      });
+
+      // Send the filtered sellers as the response
+      res.status(200).json({
+        success: true,
+        data: sellers,
+      });
+    } catch (error) {
+      // Handle any errors that occur during the query
+      console.error("Error fetching sellers:", error);
+      res.status(500).json({
+        success: false,
+        message: "An error occurred while fetching sellers.",
+      });
+    }
+  }),
+
+  deleteSeller: asyncHandler(async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      // Find the seller by ID and delete
+      const deletedSeller = await authenticationModel.findByIdAndDelete(id);
+
+      if (!deletedSeller) {
+        return res.status(404).json({ message: "Seller not found" });
+      }
+
+      res.status(200).json({
+        message: "Seller deleted successfully",
+        data: deletedSeller,
+      });
+    } catch (error) {
+      console.error("Error deleting seller:", error);
+      res.status(500).json({
+        message: "Failed to delete seller",
+        error: error.message,
+      });
     }
   }),
 };

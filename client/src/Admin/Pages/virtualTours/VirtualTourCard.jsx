@@ -101,13 +101,13 @@ const VirtualTourCard = ({ property }) => {
         >
           View Tour
         </Button>
-        <Button
+        {/* <Button
           variant="contained"
           size="small"
           sx={{ flexGrow: 1, backgroundColor: "#474E93" }}
         >
           Edit
-        </Button>
+        </Button> */}
       </CardActions>
     </Card>
   );

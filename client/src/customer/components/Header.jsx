@@ -114,7 +114,8 @@ const Header = () => {
   }, []);
 
   const getNavItems = () => {
-    if (user.data?.role === "admin") return navItemsAfterLogin;
+    if (user.data?.role === "admin" || user.data?.role === "superAdmin")
+      return navItemsAfterLogin;
     if (user.data?.role === "user")
       return [
         ...navItemsAfterLogin.filter((item) => item.label !== "Dashboard"),

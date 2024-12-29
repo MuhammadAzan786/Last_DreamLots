@@ -1,7 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-
-const possibleRoles = ["user", "admin"];
+const possibleRoles = ["user", "admin", "superAdmin"];
 
 const authenticationSchema = new mongoose.Schema(
   {
@@ -16,7 +15,7 @@ const authenticationSchema = new mongoose.Schema(
     role: {
       type: String,
       enum: possibleRoles,
-      default: "user",
+      default: "admin",
     },
     email: {
       type: String,

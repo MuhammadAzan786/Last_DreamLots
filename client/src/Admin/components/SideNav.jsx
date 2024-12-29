@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import ThreeSixtyIcon from "@mui/icons-material/ThreeSixty";
 import PanoramaIcon from "@mui/icons-material/Panorama";
-
+import StoreIcon from "@mui/icons-material/Store";
 import {
   AppBar,
   Avatar,
@@ -71,7 +71,7 @@ function SideNav(props) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const state = useSelector((state) => state.Singleuser);
-
+  console.log(state.data.role);
   const handleMenuClick = (event) => {
     setAnchorEl(event.currentTarget);
     setMenuOpen(true);
@@ -128,7 +128,7 @@ function SideNav(props) {
         alignItems="center"
         p={2}
       >
-        <img src={Logo} alt="Logo" style={{ width: "55%", height: "auto" }} />
+        <img src={Logo} alt="Logo" style={{ height: "30px" }} />
       </Box>
 
       <List>
@@ -203,6 +203,17 @@ function SideNav(props) {
             <ListItemText primary={"Messages"} />
           </ListItemButton>
         </ListItem>
+
+        {state.data.role === "superAdmin" && (
+          <ListItem disablePadding>
+            <ListItemButton component={Link} to="sellers">
+              <ListItemIcon>
+                <StoreIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Sellers"} />
+            </ListItemButton>
+          </ListItem>
+        )}
       </List>
     </div>
   );

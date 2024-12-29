@@ -184,14 +184,14 @@ const AddProperty = () => {
               fontFamily: "Segoe UI",
             }}
           >
-            Virtual Tour Form
+            Property Form
           </Typography>
           <form onSubmit={handleSubmit}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
-                  label="Tour Name"
+                  label="Property Name"
                   variant="outlined"
                   value={tourName}
                   onChange={(e) => setTourName(e.target.value)}
@@ -466,16 +466,25 @@ const AddProperty = () => {
                   </Grid>
                 </Box>
               </Grid>
-              <Button variant="contained" component="label" sx={{ mb: 2 }}>
-                Select Images
-                <input
-                  type="file"
-                  multiple
-                  accept="image/*"
-                  hidden
-                  onChange={handleImageChange}
-                />
-              </Button>
+              <Grid container>
+                <Grid item xs={12}>
+                  <Button
+                    variant="contained"
+                    component="label"
+                    sx={{ ml: 3, mt: 2, mb: 2 }}
+                  >
+                    Select Images
+                    <input
+                      type="file"
+                      multiple
+                      accept="image/*"
+                      hidden
+                      onChange={handleImageChange}
+                    />
+                  </Button>
+                </Grid>
+              </Grid>
+
               <Grid container spacing={2}>
                 {imagePreviews.map((preview, index) => (
                   <Grid item xs={4} key={index}>
@@ -497,7 +506,7 @@ const AddProperty = () => {
 
               <Grid item xs={12}>
                 <Button variant="contained" type="submit" color="secondary">
-                  Create Tour
+                  Create Property
                 </Button>
               </Grid>
             </Grid>
