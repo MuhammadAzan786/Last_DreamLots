@@ -159,7 +159,7 @@ export default function SignUp() {
                     navigate("/");
                   }}
                   alt="Logo Img"
-                  style={{ height: "70px" }}
+                  style={{ height: "40px" }}
                 />
               </Box>
 

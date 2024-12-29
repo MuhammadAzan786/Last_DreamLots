@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "../sections/HeroSection";
-
+import tourImg from "../images/tourImg.jpg";
 import QualitySection from "../sections/QualitySection";
 import OurGoal from "../sections/OurGoal";
-import FeatureProducts from "../sections/FeatureProducts";
 import { BasicTable } from "../imports";
 
 import ProductCategories from "../sections/ProductCategories";
@@ -12,6 +11,8 @@ import CoorporationPartners from "../sections/CoorporationPartners";
 import WelcomeScreen from "./WelcomeScreen";
 import { useSelector } from "react-redux";
 import Certified from "../sections/Certified";
+import PopularVirtualTours from "../components/PopularVirtualTours";
+import BecomeAgent from "../components/BecomeAgent";
 
 const Home = () => {
   const [isFirstLogin, setIsFirstLogin] = useState(false);
@@ -33,10 +34,11 @@ const Home = () => {
       <HeroSection />
       <QualitySection />
       <OurGoal />
-      <FeatureProducts />
-      <ProductCategories />
+      <PopularVirtualTours />
+      <BecomeAgent />
+
       {/* <BasicTable /> */}
-      <Certified />
+      {/* <Certified /> */}
       <CoorporationPartners />
       <ServicesSection />
     </>

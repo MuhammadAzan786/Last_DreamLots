@@ -1,5 +1,5 @@
 import React from "react";
-import fan1 from "../images/fan1.jpg";
+import home1 from "../images/home1.jpg";
 import { Container, Grid, Typography, Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -62,11 +62,14 @@ const OurGoal = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              Our goal is to create a sustainable, inclusive, and accessible
-              community where everyone feels comfortable expressing their
-              thoughts, feelings, and needs. We believe that by fostering a
-              sense of belonging and empowering people to create their own
-              future, we can create a more just and equitable society.
+              Our goal is to revolutionize the way you explore real estate by
+              offering an immersive virtual tour experience that brings
+              properties to life. We aim to simplify your search for the perfect
+              home, office, or investment by providing 360° views of luxurious
+              apartments, modern villas, and prime locations. Our commitment is
+              to empower you with the tools to make informed decisions, saving
+              time and effort while delivering a seamless, innovative, and
+              enjoyable property exploration journey. Your dream space awaits!
             </Typography>
             <Button
               component={motion.button}
@@ -109,8 +112,8 @@ const OurGoal = () => {
           >
             <Box
               component="img"
-              src={fan1}
-              alt="fan image"
+              src={home1}
+              alt="home image"
               sx={{
                 width: "100%",
                 height: "auto",

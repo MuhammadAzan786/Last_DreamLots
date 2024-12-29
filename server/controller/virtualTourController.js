@@ -117,10 +117,10 @@ exports.addVirtualTour = async (req, res) => {
 
 exports.getAllVirtualTours = async (req, res) => {
   try {
-    const allTours = VirtualTourData.find();
+    const allTours = await VirtualTourData.find();
     res.status(200).json({ data: allTours });
   } catch (error) {
-    console.error("Error saving data:", error);
+    console.error("Error fetching data:", error);
     res.status(500).json({
       message: "Failed to fetch data",
       error: error.message || "Unknown error",
@@ -135,6 +135,24 @@ exports.getAllVirtualToursBySellerId = async (req, res) => {
       return res.status(404).json({ message: "Virtual Tour Data not found" });
     }
     res.status(200).json(property);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+exports.getVirtualTourById = async (req, res) => {
+  try {
+    const tourId = req.params.id;
+    console.log(tourId);
+
+    if (!tourId) {
+      res.status(400).json({ error: "tour not found" });
+    }
+    const tour = await VirtualTourData.findById(tourId);
+    if (!tour) {
+      res.status(400).json({ error: "tour not found" });
+    }
+    res.status(200).json({ success: true, data: tour });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

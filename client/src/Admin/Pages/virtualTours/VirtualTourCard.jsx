@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Card,
   CardMedia,
@@ -14,6 +15,7 @@ import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
 const VirtualTourCard = ({ property }) => {
+  const navigate = useNavigate();
   const { thumbnail, name, price, streetAddress, city, bedrooms, bathrooms } =
     property;
 
@@ -30,6 +32,9 @@ const VirtualTourCard = ({ property }) => {
           transform: "scale(1.05)",
           boxShadow: "0 8px 30px rgba(0, 0, 0, 0.2)",
         },
+      }}
+      onClick={() => {
+        navigate(`virtualTourDetail/${property._id}`);
       }}
     >
       <CardMedia

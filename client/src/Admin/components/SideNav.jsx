@@ -168,50 +168,8 @@ function SideNav(props) {
           </ListItemButton>
         </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="addproduct">
-            <ListItemIcon>
-              <AddBusinessIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Add Product"} />
-          </ListItemButton>
-        </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="categories">
-            <ListItemIcon>
-              <CategoryIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Categories"} />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="addcategory">
-            <ListItemIcon>
-              <LibraryAddIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Add Category"} />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="orders">
-            <ListItemIcon>
-              <LocalGroceryStoreIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Orders"} />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="stock">
-            <ListItemIcon>
-              <AnalyticsIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Stock"} />
-          </ListItemButton>
-        </ListItem>
+       
 
         <ListItem disablePadding>
           <ListItemButton component={Link} to="messages">
@@ -241,19 +199,20 @@ function SideNav(props) {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component={Link} to="customers">
-            <ListItemIcon>
-              <GroupIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Customers"} />
-          </ListItemButton>
-        </ListItem>
-        <ListItem disablePadding>
           <ListItemButton component={Link} to="addbanner">
             <ListItemIcon>
               <LibraryAddIcon />
             </ListItemIcon>
-            <ListItemText primary={"Add Banner"} />
+            <ListItemText primary={"Add Banners"} />
+          </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+          <ListItemButton component={Link} to="messages">
+            <ListItemIcon>
+              <Message />
+            </ListItemIcon>
+            <ListItemText primary={"Messages"} />
           </ListItemButton>
         </ListItem>
       </List>

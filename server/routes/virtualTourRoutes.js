@@ -15,4 +15,5 @@ router.get(
   virtualTourController.getAllVirtualToursBySellerId
 );
 
+router.get("/getVirtualTourById/:id", virtualTourController.getVirtualTourById);
 module.exports = router;
