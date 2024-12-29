@@ -128,13 +128,20 @@ const PopularVirtualTours = () => {
       <Container>
         <HeadingContainer container>
           <Grid item>
-            <Typography
+            {/* <Typography
               variant="h4"
               component="h2"
               className="font-weight-bold text-primary heading"
               style={{ marginBottom: "1rem" }}
             >
               Popular Properties
+            </Typography> */}
+            <Typography
+              variant="h4"
+              align="center"
+              sx={{ fontWeight: "bold", mb: 3 }}
+            >
+              Popular Property
             </Typography>
           </Grid>
           <Grid item>

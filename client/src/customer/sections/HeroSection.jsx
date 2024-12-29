@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Box, CircularProgress } from "@mui/material"; // Added CircularProgress for loading spinner
+import { Box, CircularProgress, Typography } from "@mui/material";
 import axios from "axios";
 
 const HeroSection = () => {
@@ -52,17 +52,50 @@ const HeroSection = () => {
           <CircularProgress />
         </Box>
       ) : (
-        <Slider {...settings} style={{ height: "100%" }}>
+        <Slider {...settings} style={{ height: "100vh" }}>
           {banners?.map((banner) => (
             <div key={banner._id}>
               {banner.bannerImages.map((image) => (
-                <div className="banner-container" key={image.public_id}>
+                <Box
+                  key={image.public_id}
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: "100vh", // Full screen height for banners
+                    overflow: "hidden",
+                  }}
+                >
                   <img
                     src={image.url}
                     alt={image.original_filename}
-                    className="background-image"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
                   />
-                </div>
+                  {/* Overlay */}
+                  <Box
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent black overlay
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      color: "white",
+                      textAlign: "center",
+                      px: 2, // Padding for responsive text
+                    }}
+                  >
+                    <Typography variant="h3" sx={{ fontWeight: "bold", color:"white" }}>
+                      Explore Virtually, Find Home Sweet Home!
+                    </Typography>
+                  </Box>
+                </Box>
               ))}
             </div>
           ))}

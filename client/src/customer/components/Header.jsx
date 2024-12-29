@@ -47,19 +47,21 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 const navItems = [
   { label: "Home", path: "/" },
+  { label: "Buy Property", path: "/buy-property" },
+  { label: "Rent Property", path: "/rent-property" },
+  { label: "Virtual Tours", path: "/virtualTours" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
-  { label: "Properties", path: "/properties" },
-  { label: "Virtual Tours", path: "/virtualTours" },
   // { label: "Login", path: "/login" },
 ];
 
 const navItemsAfterLogin = [
   { label: "Home", path: "/" },
+  { label: "Buy Property", path: "/buy-property" },
+  { label: "Rent Property", path: "/rent-property" },
+  { label: "Virtual Tours", path: "/virtualTours" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
-  { label: "Categories", path: "/categories" },
-  { label: "Products", path: "/products" },
   { label: "Dashboard", path: "/admin/dashboard" },
 ];
 

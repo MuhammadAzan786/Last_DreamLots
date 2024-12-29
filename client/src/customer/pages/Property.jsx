@@ -1,22 +1,13 @@
 import React, { useEffect, useState } from "react";
 import HeroSection from "../sections/HeroSection";
-import tourImg from "../images/tourImg.jpg";
-import QualitySection from "../sections/QualitySection";
-import OurGoal from "../sections/OurGoal";
-import { BasicTable } from "../imports";
 
-import ProductCategories from "../sections/ProductCategories";
 import ServicesSection from "../sections/ServicesSection";
 import CoorporationPartners from "../sections/CoorporationPartners";
 import WelcomeScreen from "./WelcomeScreen";
 import { useSelector } from "react-redux";
-import Certified from "../sections/Certified";
 import PopularVirtualTours from "../components/PopularVirtualTours";
-import BecomeAgent from "../components/BecomeAgent";
-import AreaGuideCarousel from "../sections/AreaGuideCarousel";
-import InvestWanted from "../sections/InvestWanted";
 
-const Home = () => {
+const Property = () => {
   const [isFirstLogin, setIsFirstLogin] = useState(false);
   const user = useSelector((state) => state.Singleuser);
 
@@ -33,20 +24,11 @@ const Home = () => {
   return (
     <>
       {isFirstLogin && <WelcomeScreen username={user.data.username} />}
-      <HeroSection />
-      <QualitySection />
-      <OurGoal />
       <PopularVirtualTours />
-      <InvestWanted/>
-      <BecomeAgent />
-      <AreaGuideCarousel/>
-
-      {/* <BasicTable /> */}
-      {/* <Certified /> */}
       <CoorporationPartners />
       <ServicesSection />
     </>
   );
 };
 
-export default Home;
+export default Property;

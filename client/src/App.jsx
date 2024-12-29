@@ -44,6 +44,12 @@ import AddBanner from "./Admin/Pages/addbanner.jsx";
 import AddVirtualTourForm from "./Admin/Pages/virtualTours/AddVirtualTourForm.jsx";
 import SellerAllVirtualTours from "./Admin/Pages/virtualTours/SellerAllVirtualTours.jsx";
 import SellerVitualTourDetail from "./Admin/Pages/virtualTours/SellerVitualTourDetail.jsx";
+import AddProperty from "./Admin/Pages/Property/AddPropert.jsx";
+import Property from "./customer/pages/Property.jsx";
+import BuyProperty from "./customer/pages/BuyProperty.jsx";
+import RentProperty from "./customer/pages/RentProperty.jsx";
+
+
 
 const VERIFY_API = `${
   import.meta.env.VITE_BACKEND_DOMAIN_NAME
@@ -78,6 +84,11 @@ export default function App() {
           <Route path="uniqueproducts/:id" element={<UniqueProducts />} />
           <Route path="order-details/:id" element={<OrderDetailsPage />} />
           <Route path="products" element={<Products />} />
+          
+          <Route path="property" element={<Property />} />
+          <Route path="buy-property" element={<BuyProperty />} />
+          <Route path="rent-property" element={<RentProperty />} />
+
           <Route path="term" element={<TermsAndConditions />} />
           <Route
             path="products/product/:id"

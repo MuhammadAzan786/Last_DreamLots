@@ -1,0 +1,27 @@
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+  }
+  
+  .card-overlay:hover {
+    opacity: 0;
+  }
+  
+  .card-media {
+    opacity: 1;
+  }
+  
+  .card-media:hover {
+    opacity: 1;
+  }
+  
