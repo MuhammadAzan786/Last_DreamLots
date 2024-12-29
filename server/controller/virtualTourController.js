@@ -139,3 +139,21 @@ exports.getAllVirtualToursBySellerId = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.getVirtualTourById = async (req, res) => {
+  try {
+    const tourId = req.params.id;
+    console.log(tourId);
+
+    if (!tourId) {
+      res.status(400).json({ error: "tour not found" });
+    }
+    const tour = await VirtualTourData.findById(tourId);
+    if (!tour) {
+      res.status(400).json({ error: "tour not found" });
+    }
+    res.status(200).json({ success: true, data: tour });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
