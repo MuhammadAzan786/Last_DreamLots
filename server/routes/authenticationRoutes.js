@@ -18,5 +18,7 @@ router.post(
 router.post("/forgotPassword", authenticationConstroller.forgotPassword);
 router.post("/resetPassword/:token", authenticationConstroller.resetPassword);
 router.get("/check-auth", verifyToken, authenticationConstroller.checkAuth);
+router.get("/sellers", authenticationConstroller.sellers);
+router.delete("/deleteSeller/:id", authenticationConstroller.deleteSeller);
 
 module.exports = router;
