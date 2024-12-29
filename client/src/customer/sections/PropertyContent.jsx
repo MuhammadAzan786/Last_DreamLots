@@ -59,11 +59,11 @@ function PropertyContent() {
     }
 
     if (minPrice) {
-      filtered = filtered.filter((property) => property.price >= parseInt(minPrice));
+      filtered = filtered.filter((property) => property.propertyPrice >= parseInt(minPrice));
     }
 
     if (maxPrice) {
-      filtered = filtered.filter((property) => property.price <= parseInt(maxPrice));
+      filtered = filtered.filter((property) => property.propertyPrice <= parseInt(maxPrice));
     }
 
     setFilteredProperties(filtered);
@@ -144,7 +144,7 @@ function PropertyContent() {
                   {property.address}, {property.city}
                 </Typography>
                 <Typography variant="h6" sx={{ mt: 1 }}>
-                  PKR {property.price}
+                  PKR {property.propertyPrice}
                 </Typography>
                 <Box sx={{display:"flex", justifyContent:"center",alignItems:"center"}}>
                 <Typography variant="body" sx={{ mt: 1 }}>

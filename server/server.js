@@ -3,6 +3,7 @@ const cors = require("cors");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const dbconnection = require("./database");
+const bodyParser = require("body-parser")
 const path = require("path");
 
 // Routes imports
@@ -21,6 +22,8 @@ const app = express();
 // Middleware
 app.use(cookieParser());
 app.use(express.json());
+app.use(bodyParser.json()); // Parse JSON payloads
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(
   cors({

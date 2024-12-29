@@ -34,6 +34,10 @@ const propertySchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    address: {
+        type: String,
+        // required: true,
+    },
     city: {
         type: String,
         // required: true,

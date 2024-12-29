@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import HeroSection from "../sections/HeroSection";
-
 import ServicesSection from "../sections/ServicesSection";
 import CoorporationPartners from "../sections/CoorporationPartners";
 import WelcomeScreen from "./WelcomeScreen";
 import { useSelector } from "react-redux";
+import PropertyContent from "../sections/PropertyContent";
 import PopularVirtualTours from "../components/PopularVirtualTours";
+
 
 const Property = () => {
   const [isFirstLogin, setIsFirstLogin] = useState(false);
@@ -24,6 +24,7 @@ const Property = () => {
   return (
     <>
       {isFirstLogin && <WelcomeScreen username={user.data.username} />}
+      <PropertyContent/>
       <PopularVirtualTours />
       <CoorporationPartners />
       <ServicesSection />
