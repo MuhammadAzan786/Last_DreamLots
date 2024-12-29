@@ -43,6 +43,9 @@ import VerificationEmailResend from "./Admin/Pages/VerificationEmailResend.jsx";
 import AddBanner from "./Admin/Pages/addbanner.jsx";
 import AddVirtualTourForm from "./Admin/Pages/virtualTours/AddVirtualTourForm.jsx";
 import SellerAllVirtualTours from "./Admin/Pages/virtualTours/SellerAllVirtualTours.jsx";
+<<<<<<<<< Temporary merge branch 1
+import AddProperty from "./Admin/Pages/Property/AddPropert.jsx";
+=========
 import SellerVitualTourDetail from "./Admin/Pages/virtualTours/SellerVitualTourDetail.jsx";
 import AddProperty from "./Admin/Pages/Property/AddPropert.jsx";
 import Property from "./customer/pages/Property.jsx";
@@ -128,7 +131,7 @@ export default function App() {
                 element={<SellerAllVirtualTours />}
               />
               <Route path="add-property" element={<AddProperty />} />
-              
+
               <Route
                 path="customerOrderHistoryPage/:id"
                 element={<CustomerOrderHistoryPage />}

@@ -160,18 +160,6 @@ function SideNav(props) {
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton component={Link} to="allproduct">
-            <ListItemIcon>
-              <AppsIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Products"} />
-          </ListItemButton>
-        </ListItem>
-
-
-       
-
-        <ListItem disablePadding>
           <ListItemButton component={Link} to="messages">
             <ListItemIcon>
               <Message />
