@@ -49,8 +49,8 @@ const navItems = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
-  { label: "Categories", path: "/categories" },
-  { label: "Products", path: "/products" },
+  { label: "Properties", path: "/properties" },
+  { label: "Virtual Tours", path: "/virtualTours" },
   // { label: "Login", path: "/login" },
 ];
 
@@ -179,7 +179,7 @@ const Header = () => {
           onClick={() => {
             navigate("/");
           }}
-          className="w-24 sm:mx-0 mx-auto"
+          className="w-44 sm:mx-0 mx-auto"
           src={logo}
           alt="Logo"
         />

@@ -3,9 +3,9 @@ import React from "react";
 
 const QualitySection = () => {
   const cardData = [
-    { title1: "Energy", title2: "Saver Technology" },
-    { title1: "99.99% Pure", title2: "Copper Wiver" },
-    { title1: "RANGE OF", title2: "Quality Products" },
+    { title1: "Explore", title2: "Luxury Apartments" },
+    { title1: "360° View", title2: "Of Modern Villas" },
+    { title1: "Discover", title2: "Prime Locations" },
   ];
 
   return (

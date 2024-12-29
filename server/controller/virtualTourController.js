@@ -117,10 +117,10 @@ exports.addVirtualTour = async (req, res) => {
 
 exports.getAllVirtualTours = async (req, res) => {
   try {
-    const allTours = VirtualTourData.find();
+    const allTours = await VirtualTourData.find();
     res.status(200).json({ data: allTours });
   } catch (error) {
-    console.error("Error saving data:", error);
+    console.error("Error fetching data:", error);
     res.status(500).json({
       message: "Failed to fetch data",
       error: error.message || "Unknown error",

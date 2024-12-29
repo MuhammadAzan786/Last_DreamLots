@@ -134,7 +134,7 @@ export default function Login() {
                   src={logo}
                   alt="Logo"
                   style={{
-                    height: "60px",
+                    height: "35px",
                     maxWidth: "100%",
                     objectFit: "contain",
                   }}

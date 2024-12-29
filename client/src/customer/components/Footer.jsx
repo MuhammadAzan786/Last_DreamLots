@@ -5,7 +5,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import XIcon from "@mui/icons-material/X";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { img1 } from "../imports";
+// import { img1 } from "../imports";
+import logo1 from "../../../src/assets/images/logo1.png";
 import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
@@ -21,11 +22,11 @@ const Footer = () => {
                 <Box className="logo">
                   <Link>
                     <img
-                      src={img1}
+                      src={logo1}
                       onClick={() => {
                         navigate("/");
                       }}
-                      style={{ height: "75px" }}
+                      style={{ height: "40px" }}
                       alt="logo"
                     />
                   </Link>
