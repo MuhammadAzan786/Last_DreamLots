@@ -46,6 +46,8 @@ const AddProperty = () => {
   const [images, setImages] = useState([]);
   const [imagePreviews, setImagePreviews] = useState([]);
   const [area, setArea] = useState("");
+  const [floor, setFloor] = useState("");
+  const [description, setDescription] = useState("");
   const [location, setLocation] = useState({
     lat: 31.5204, // Default to Lahore, Pakistan
     lng: 74.3587,
@@ -125,6 +127,8 @@ const AddProperty = () => {
     formData.append("name", tourName);
     formData.append("propertyType", propertyType);
     formData.append("area", area);
+    formData.append("floor", floor);
+    formData.append("description", description);
     formData.append("bedrooms", bedrooms);
     formData.append("bathrooms", bathrooms);
     formData.append("price", price);
@@ -153,6 +157,8 @@ const AddProperty = () => {
       setImagePreviews([]);
       setPropertyType(""); // Reset property type
       setArea(""); // Reset area
+      serFloor("");
+      ssetDescription("");
       setBedrooms(""); // Reset bedrooms
       setBathrooms(""); // Reset bathrooms
       setPrice(""); // Reset price
@@ -271,6 +277,27 @@ const AddProperty = () => {
                 </FormControl>
               </Grid>
 
+              {/* Number of Floor */}
+              <Grid item xs={12} md={6}>
+                <FormControl fullWidth>
+                  <InputLabel id="bathrooms-label">
+                    Number of Floors
+                  </InputLabel>
+                  <Select
+                    labelId="bathrooms-label"
+                    value={floor}
+                    onChange={handleChange(setFloor)}
+                    label="Number of Bathrooms"
+                  >
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
+                    <MenuItem value={5}>5+</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+
               <Grid item xs={12} md={6}>
                 <TextField
                   fullWidth
@@ -306,6 +333,17 @@ const AddProperty = () => {
                   required
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                />
+              </Grid>
+
+              <Grid item xs={12} md={6}>
+                <TextField
+                  fullWidth
+                  label="Property Description"
+                  variant="outlined"
+                  required
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 />
               </Grid>
 

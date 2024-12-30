@@ -12,9 +12,9 @@ import {
   Pagination,
   Box,
 } from "@mui/material";
-import { Link } from "react-router-dom";
-import SingleBedIcon from "@mui/icons-material/SingleBed";
-import BathtubIcon from "@mui/icons-material/Bathtub";
+import { Link, NavLink } from "react-router-dom";
+import SingleBedIcon from '@mui/icons-material/SingleBed';
+import BathtubIcon from '@mui/icons-material/Bathtub';
 
 function PropertyContent() {
   const [properties, setProperties] = useState([]);
@@ -29,11 +29,14 @@ function PropertyContent() {
   const propertiesPerPage = 6;
 
   useEffect(() => {
+    // Fetch property data
     const fetchProperties = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/property/get-all-property"
-        );
+            `${
+              import.meta.env.VITE_BACKEND_DOMAIN_NAME
+            }/api/virtualTours/getAllVirtualTours`
+          );
         setProperties(response.data);
         setFilteredProperties(response.data);
       } catch (error) {
@@ -44,12 +47,12 @@ function PropertyContent() {
   }, []);
 
   const handleSearch = () => {
-    const { name, city, minPrice, maxPrice } = searchFilters;
+    const { propertyName, city, minPrice, maxPrice, bedrooms,bathrooms } = searchFilters;
     let filtered = properties;
 
-    if (name) {
+    if (propertyName) {
       filtered = filtered.filter((property) =>
-        property.name.toLowerCase().includes(name.toLowerCase())
+        property.propertyName.toLowerCase().includes(propertyName.toLowerCase())
       );
     }
 
@@ -68,7 +71,7 @@ function PropertyContent() {
     }
 
     setFilteredProperties(filtered);
-    setCurrentPage(1); // Reset to the first page
+    setCurrentPage(1); // Reset to first page
   };
 
   const handlePageChange = (event, page) => {
@@ -77,10 +80,7 @@ function PropertyContent() {
 
   // Pagination Logic
   const startIndex = (currentPage - 1) * propertiesPerPage;
-  const currentProperties = filteredProperties.slice(
-    startIndex,
-    startIndex + propertiesPerPage
-  );
+  const currentProperties = filteredProperties.slice(startIndex, startIndex + propertiesPerPage);
 
   return (
     <Container maxWidth="lg" sx={{ mt: 4 }}>
@@ -124,7 +124,7 @@ function PropertyContent() {
             onChange={(e) => setSearchFilters({ ...searchFilters, maxPrice: e.target.value })}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={12}>
           <Button variant="contained" color="primary" onClick={handleSearch} fullWidth>
             Search
           </Button>
@@ -136,36 +136,41 @@ function PropertyContent() {
         {currentProperties.map((property) => (
           <Grid item xs={12} sm={6} md={4} key={property._id}>
             <Card sx={{ height: "100%" }}>
-              <CardMedia
+              {/* <CardMedia
                 component="img"
                 height="200"
-                image={property.thumbnail?.[0] || "https://via.placeholder.com/300"}
+                image={property.images?.[1] || "https://via.placeholder.com/300"}
+                // image={property.thumbnail}
+                // image={property.images}
                 alt={property.name}
-              />
-              <CardContent sx={{ textAlign: "center" }}>
-                <Typography variant="h6">{property.propertyName}</Typography>
+              /> */}
+              <img
+        src={property.thumbnail}
+        alt={property.name}
+        style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+      />
+              <CardContent sx={{textAlign:"center"}}>
+                <Typography variant="h6">{property.name}</Typography>
                 <Typography variant="body2" color="textSecondary">
                   {property.streetAddress}, {property.city}
                 </Typography>
                 <Typography variant="h6" sx={{ mt: 1 }}>
                   PKR {property.price}
                 </Typography>
-                <Box
-                  sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}
-                >
-                  <Typography variant="body2">
-                    {property.bedrooms} <SingleBedIcon />
-                  </Typography>
-                  <Typography variant="body2">
-                    {property.bathrooms} <BathtubIcon />
-                  </Typography>
+                <Box sx={{display:"flex", justifyContent:"center",alignItems:"center"}}>
+                <Typography variant="body" sx={{ mt: 1 }}>
+                   {property.bedrooms} <SingleBedIcon/>
+                </Typography>
+                <Typography variant="body" sx={{ mt: 1 }}>
+                   {property.bathrooms} <BathtubIcon/>
+                </Typography>
                 </Box>
                 <Button
                   variant="contained"
                   color="primary"
                   sx={{ mt: 2 }}
                   component={Link}
-                  to={`/view-detail/${property._id}`}
+                  to={`/view-detail`}
                 >
                   View Details
                 </Button>
