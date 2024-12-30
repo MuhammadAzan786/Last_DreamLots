@@ -48,7 +48,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Property", path: "/property" },
-  { label: "Virtual Tours", path: "/virtualTours" },
+  { label: "Virtual Tours", path: "virtual-tour" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
   // { label: "Login", path: "/login" },
@@ -57,7 +57,7 @@ const navItems = [
 const navItemsAfterLogin = [
   { label: "Home", path: "/" },
   { label: "Property", path: "/property" },
-  { label: "Virtual Tours", path: "/virtualTours" },
+  { label: "Virtual Tours", path: "/virtual-tour" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
   { label: "Dashboard", path: "/admin/dashboard" },
