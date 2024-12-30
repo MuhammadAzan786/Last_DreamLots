@@ -141,78 +141,74 @@ function SideNav(props) {
           </ListItemButton>
         </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="allproduct">
-            <ListItemIcon>
-              <ApartmentIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Property List"} />
-          </ListItemButton>
-        </ListItem>
+        {state.data.role === "admin" && (
+          <>
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="allproduct">
+                <ListItemIcon>
+                  <ApartmentIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Property List"} />
+              </ListItemButton>
+            </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="add-property">
-            <ListItemIcon>
-              <AddBusinessIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Add Property"} />
-          </ListItemButton>
-        </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="add-property">
+                <ListItemIcon>
+                  <AddBusinessIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Add Property"} />
+              </ListItemButton>
+            </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="messages">
-            <ListItemIcon>
-              <Message />
-            </ListItemIcon>
-            <ListItemText primary={"Messages"} />
-          </ListItemButton>
-        </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="SellerAllVirtualTours">
+                <ListItemIcon>
+                  <PanoramaIcon />
+                </ListItemIcon>
+                <ListItemText primary={"My Virtual Tours"} />
+              </ListItemButton>
+            </ListItem>
 
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="SellerAllVirtualTours">
-            <ListItemIcon>
-              <PanoramaIcon />
-            </ListItemIcon>
-            <ListItemText primary={"My Virtual Tours"} />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="addVirtualTour">
-            <ListItemIcon>
-              <ThreeSixtyIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Create Virtual Tour"} />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="addbanner">
-            <ListItemIcon>
-              <LibraryAddIcon />
-            </ListItemIcon>
-            <ListItemText primary={"Add Banners"} />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton component={Link} to="messages">
-            <ListItemIcon>
-              <Message />
-            </ListItemIcon>
-            <ListItemText primary={"Messages"} />
-          </ListItemButton>
-        </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="addVirtualTour">
+                <ListItemIcon>
+                  <ThreeSixtyIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Create Virtual Tour"} />
+              </ListItemButton>
+            </ListItem>
+          </>
+        )}
 
         {state.data.role === "superAdmin" && (
-          <ListItem disablePadding>
-            <ListItemButton component={Link} to="sellers">
-              <ListItemIcon>
-                <StoreIcon />
-              </ListItemIcon>
-              <ListItemText primary={"Sellers"} />
-            </ListItemButton>
-          </ListItem>
+          <>
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="sellers">
+                <ListItemIcon>
+                  <StoreIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Sellers"} />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="messages">
+                <ListItemIcon>
+                  <Message />
+                </ListItemIcon>
+                <ListItemText primary={"Messages"} />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem disablePadding>
+              <ListItemButton component={Link} to="addbanner">
+                <ListItemIcon>
+                  <LibraryAddIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Add Banners"} />
+              </ListItemButton>
+            </ListItem>
+          </>
         )}
       </List>
     </div>

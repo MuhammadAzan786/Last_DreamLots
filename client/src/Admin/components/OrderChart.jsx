@@ -1,10 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, LabelList } from 'recharts';
-import { useDispatch, useSelector } from 'react-redux';
-import { Box } from '@mui/system';
-import { Typography } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  LabelList,
+} from "recharts";
+import { useDispatch, useSelector } from "react-redux";
+import { Box } from "@mui/system";
+import { Typography } from "@mui/material";
 
-const CustomBarChart = ({dateRange}) => {
+const CustomBarChart = ({ dateRange }) => {
   const [chartData, setChartData] = useState([]);
   const [totalRevenue, setTotalRevenue] = useState(0);
 
@@ -12,7 +20,6 @@ const CustomBarChart = ({dateRange}) => {
 
   useEffect(() => {
     if (Array.isArray(orders?.data)) {
-
       const getLast3Months = () => {
         const today = new Date();
         const months = [];
@@ -22,7 +29,9 @@ const CustomBarChart = ({dateRange}) => {
           const yearMonth = date.toISOString().slice(0, 7); // Format as YYYY-MM
           months.push({
             yearMonth,
-            displayMonth: new Date(date).toLocaleString('default', { month: 'short' })
+            displayMonth: new Date(date).toLocaleString("default", {
+              month: "short",
+            }),
           });
         }
         return months;
@@ -42,7 +51,10 @@ const CustomBarChart = ({dateRange}) => {
       orders.data.forEach((order) => {
         const date = new Date(order.createdAt);
         const yearMonth = date.toISOString().slice(0, 7); // Format as YYYY-MM
-        if (monthMap.hasOwnProperty(yearMonth) && order.orderStatus === 'Shipped') {
+        if (
+          monthMap.hasOwnProperty(yearMonth) &&
+          order.orderStatus === "Shipped"
+        ) {
           monthMap[yearMonth] += order.totalPrice; // Sum totalPrice for shipped orders
           total += order.totalPrice; // Aggregate total price
         }
@@ -51,7 +63,7 @@ const CustomBarChart = ({dateRange}) => {
       // Prepare data for the chart
       const formattedData = last3Months.map(({ yearMonth, displayMonth }) => ({
         name: displayMonth,
-        totalPrice: monthMap[yearMonth] || 0
+        totalPrice: monthMap[yearMonth] || 0,
       }));
 
       setChartData(formattedData);
@@ -62,8 +74,12 @@ const CustomBarChart = ({dateRange}) => {
   return (
     <>
       <Box sx={{ mb: 2 }}>
-        <Typography variant="h6" sx={{ mx: 1, mt: 1 }}>Revenue</Typography>
-        <Typography variant="body2" sx={{ mx: 1, mb: 1 }}>{totalRevenue.toLocaleString()} /Rs</Typography>
+        <Typography variant="h6" sx={{ mx: 1, mt: 1 }}>
+          Properties
+        </Typography>
+        <Typography variant="body2" sx={{ mx: 1, mb: 1 }}>
+          {totalRevenue.toLocaleString()} /Rs
+        </Typography>
       </Box>
       <BarChart
         width={200}
@@ -77,11 +93,12 @@ const CustomBarChart = ({dateRange}) => {
         <Tooltip />
         <Bar
           dataKey="totalPrice"
-          barSize={30}  // Adjust bar width
-          radius={[10, 10, 0, 0]}  // Rounded corners
-          fill="url(#gradient)"   // Gradient fill
+          barSize={30} // Adjust bar width
+          radius={[10, 10, 0, 0]} // Rounded corners
+          fill="url(#gradient)" // Gradient fill
         >
-          <LabelList dataKey="totalPrice" position="top" fontSize="12px" />  {/* Display value labels */}
+          <LabelList dataKey="totalPrice" position="top" fontSize="12px" />{" "}
+          {/* Display value labels */}
         </Bar>
         <defs>
           <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">

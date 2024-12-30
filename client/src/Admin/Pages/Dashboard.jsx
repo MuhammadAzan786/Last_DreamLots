@@ -173,19 +173,19 @@ const Dashboard = () => {
         >
           {[
             {
-              title: "Total Categories",
+              title: "Total Sellers",
               value: totalCategories,
               icon: <CategoryIcon sx={{ fontSize: 40 }} />,
               link: "/admin/categories",
             },
             {
-              title: "Total Products",
+              title: "Total Properties",
               value: totalProducts,
               icon: <AppsIcon sx={{ fontSize: 40 }} />,
               link: "/admin/allproduct",
             },
             {
-              title: "Total Orders",
+              title: "Total Agents",
               value: totalOrders,
               icon: <LocalGroceryStoreIcon sx={{ fontSize: 40 }} />,
               link: "/admin/orders",
@@ -274,7 +274,7 @@ const Dashboard = () => {
           }}
         >
           <Typography variant="h6" sx={{ m: 2 }}>
-            Order Analysis
+            Seller Analysis
           </Typography>
           <CustomLineChart dateRange={dateRange} />
         </Box>

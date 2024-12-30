@@ -1,8 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, LabelList } from 'recharts';
-import { useSelector } from 'react-redux';
-import { Box } from '@mui/system';
-import { Typography } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  LabelList,
+} from "recharts";
+import { useSelector } from "react-redux";
+import { Box } from "@mui/system";
+import { Typography } from "@mui/material";
 
 const SimpleBarChart = () => {
   const [chartData, setChartData] = useState([]);
@@ -22,7 +30,9 @@ const SimpleBarChart = () => {
           const yearMonth = date.toISOString().slice(0, 7); // Format as YYYY-MM
           months.push({
             yearMonth,
-            displayMonth: new Date(date).toLocaleString('default', { month: 'short' }) // Format as short month name
+            displayMonth: new Date(date).toLocaleString("default", {
+              month: "short",
+            }), // Format as short month name
           });
         }
         return months;
@@ -42,7 +52,10 @@ const SimpleBarChart = () => {
       orders.data.forEach((order) => {
         const date = new Date(order.createdAt);
         const yearMonth = date.toISOString().slice(0, 7); // Format as YYYY-MM
-        if (monthMap.hasOwnProperty(yearMonth) && order.orderStatus === 'Shipped') {
+        if (
+          monthMap.hasOwnProperty(yearMonth) &&
+          order.orderStatus === "Shipped"
+        ) {
           monthMap[yearMonth] += 1;
           totalOrders += 1; // Increment total shipped orders
         }
@@ -51,7 +64,7 @@ const SimpleBarChart = () => {
       // Prepare data for the chart
       const formattedData = last3Months.map(({ yearMonth, displayMonth }) => ({
         month: displayMonth,
-        order: monthMap[yearMonth] || 0
+        order: monthMap[yearMonth] || 0,
       }));
 
       setChartData(formattedData);
@@ -62,8 +75,12 @@ const SimpleBarChart = () => {
   return (
     <>
       <Box sx={{ mb: 2 }}>
-        <Typography variant="h6" sx={{ mx: 1, mt: 1 }}>Orders</Typography>
-        <Typography variant="body2" sx={{ mx: 1, mb: 1 }}>{totalShippedOrders.toLocaleString()}</Typography>
+        <Typography variant="h6" sx={{ mx: 1, mt: 1 }}>
+          Sellers
+        </Typography>
+        <Typography variant="body2" sx={{ mx: 1, mb: 1 }}>
+          {totalShippedOrders.toLocaleString()}
+        </Typography>
       </Box>
       <BarChart
         width={200}
@@ -75,7 +92,12 @@ const SimpleBarChart = () => {
         <XAxis dataKey="month" fontSize="12px" />
         <YAxis fontSize="12px" />
         <Tooltip />
-        <Bar dataKey="order" radius={[10, 10, 0, 0]} fill="#8884d8" barSize={30}>
+        <Bar
+          dataKey="order"
+          radius={[10, 10, 0, 0]}
+          fill="#8884d8"
+          barSize={30}
+        >
           <LabelList dataKey="order" position="top" fontSize="12px" />
         </Bar>
       </BarChart>

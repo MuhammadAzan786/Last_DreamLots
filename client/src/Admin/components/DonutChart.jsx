@@ -1,10 +1,10 @@
-import React, { useEffect, useMemo } from 'react';
-import { Doughnut } from 'react-chartjs-2';
-import { Box, Typography } from '@mui/material';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchOrder } from '../../redux/Slices/ordrSlice';
+import React, { useEffect, useMemo } from "react";
+import { Doughnut } from "react-chartjs-2";
+import { Box, Typography } from "@mui/material";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchOrder } from "../../redux/Slices/ordrSlice";
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
@@ -19,8 +19,8 @@ export default function DonutChart({ dateRange }) {
   const topProducts = useMemo(() => {
     const productCount = {};
 
-    state?.data?.forEach(order => {
-      order.orderItems.forEach(item => {
+    state?.data?.forEach((order) => {
+      order.orderItems.forEach((item) => {
         if (productCount[item.name]) {
           productCount[item.name] += 1;
         } else {
@@ -37,13 +37,25 @@ export default function DonutChart({ dateRange }) {
   }, [state?.data]);
 
   const data = {
-    labels: topProducts.map(product => product.name),
+    labels: topProducts.map((product) => product.name),
     datasets: [
       {
-        label: 'Top 5 Products',
-        data: topProducts.map(product => product.count),
-        backgroundColor: ['#FFCD56', '#FF6384', '#36A2EB', '#FF9F40', '#4BC0C0'],
-        hoverBackgroundColor: ['#FFCD56', '#FF6384', '#36A2EB', '#FF9F40', '#4BC0C0'],
+        label: "Top 5 Properties",
+        data: topProducts.map((product) => product.count),
+        backgroundColor: [
+          "#FFCD56",
+          "#FF6384",
+          "#36A2EB",
+          "#FF9F40",
+          "#4BC0C0",
+        ],
+        hoverBackgroundColor: [
+          "#FFCD56",
+          "#FF6384",
+          "#36A2EB",
+          "#FF9F40",
+          "#4BC0C0",
+        ],
         borderWidth: 1,
       },
     ],
@@ -54,18 +66,18 @@ export default function DonutChart({ dateRange }) {
       <Typography
         variant="h6"
         sx={{
-          margin: '8px',
-          fontWeight: 'bold',
+          margin: "8px",
+          fontWeight: "bold",
         }}
       >
-        Top 5 Products
+        Top 5 Properties
       </Typography>
       <Box
         sx={{
           position: "relative",
           mx: 1,
-          width: '310px',
-          height: '310px',
+          width: "310px",
+          height: "310px",
         }}
       >
         <Doughnut
@@ -74,24 +86,24 @@ export default function DonutChart({ dateRange }) {
             plugins: {
               legend: {
                 display: true,
-                position: 'right',
-                align: 'center',
-                color: '#000',
+                position: "right",
+                align: "center",
+                color: "#000",
                 font: {
                   size: 12,
                 },
               },
               tooltip: {
-                backgroundColor: '#333',
+                backgroundColor: "#333",
                 titleFont: { size: 14 },
                 bodyFont: { size: 12 },
-                bodyColor: '#fff',
+                bodyColor: "#fff",
               },
               datalabels: {
                 display: false,
-                align: 'end',
-                anchor: 'end',
-                color: '#000',
+                align: "end",
+                anchor: "end",
+                color: "#000",
                 font: {
                   size: 12,
                 },

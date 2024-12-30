@@ -7,13 +7,13 @@ exports.createMessage = async (req, res) => {
     const contact = new Contact(req.body);
     await contact.save();
     // Send email notification to admin with the new message details
-    await sendMessageEmail(
-      req.body.email,
-      req.body.name,
-      req.body.subject,
-      req.body.phone,
-      req.body.message
-    );
+    // await sendMessageEmail(
+    //   req.body.email,
+    //   req.body.name,
+    //   req.body.subject,
+    //   req.body.phone,
+    //   req.body.message
+    // );
     res.status(201).json({
       message: "Message sent successfully!",
       data: contact,

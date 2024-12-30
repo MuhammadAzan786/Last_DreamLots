@@ -16,7 +16,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
   try {
     const response = await sendEmail({
       to: email,
-      subject: "Al Noor Fans - Verification Email",
+      subject: "DreamLots - Verification Email",
       html: VERIFICATION_EMAIL_TEMPLATE.replace(
         "{verificationCode}",
         verificationToken
@@ -33,7 +33,7 @@ const sendWelcomeEmail = async (email, name) => {
   try {
     const response = await sendEmail({
       to: email,
-      subject: "Al Noor Fans - Welcome Email",
+      subject: "DreamLots - Welcome Email",
       html: WELCOME_EMAIL.replace(/\[User Name\]/g, name),
     });
     console.log("Welcome email sent successfully:", response);
@@ -53,7 +53,7 @@ const sendMessageEmail = async (
   try {
     const response = await sendEmail({
       to: process.env.SMPT_MAIL,
-      subject: "Al Noor Fans - Inquiry Message",
+      subject: "DreamLots - Inquiry Message",
       html: MESSAGE_EMAIL.replace("{{userEmail}}", userEmail)
         .replace("{{userName}}", userName)
         .replace("{{userPhone}}", userPhone)
@@ -71,7 +71,7 @@ const sendResetPasswordEmail = async (email, resetURL) => {
   try {
     const response = await sendEmail({
       to: email,
-      subject: "Al Noor Fans - Reset Password",
+      subject: "DreamLots - Reset Password",
       html: PASSWORD_RESET_REQUEST_TEMPLATE.replace("{resetURL}", resetURL),
     });
     console.log("Reset password email sent successfully:", response);
@@ -85,7 +85,7 @@ const sendSuccessfullPasswordResetMail = async (email) => {
   try {
     const response = await sendEmail({
       to: email,
-      subject: "Al Noor Fans - Reset Password Successfull",
+      subject: "DreamLots - Reset Password Successfull",
       html: PASSWORD_RESET_SUCCESS_TEMPLATE,
     });
     console.log(

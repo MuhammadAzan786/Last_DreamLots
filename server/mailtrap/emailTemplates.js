@@ -19,7 +19,7 @@ const VERIFICATION_EMAIL_TEMPLATE = `
     <p>Enter this code on the verification page to complete your registration.</p>
     <p>This code will expire in 15 minutes for security reasons.</p>
     <p>If you didn't create an account with us, please ignore this email.</p>
-    <p>Best regards,<br>Al-Noor Fans</p>
+    <p>Best regards,<br>DreamLots</p>
   </div>
   <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
@@ -56,7 +56,7 @@ const PASSWORD_RESET_SUCCESS_TEMPLATE = `
       <li>Avoid using the same password across multiple sites</li>
     </ul>
     <p>Thank you for helping us keep your account secure.</p>
-    <p>Best regards,<br>Al-Noor Fans</p>
+    <p>Best regards,<br>DreamLots</p>
   </div>
   <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
@@ -85,7 +85,7 @@ const PASSWORD_RESET_REQUEST_TEMPLATE = `
       <a href="{resetURL}" style="background-color: #4CAF50; color: white; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">Reset Password</a>
     </div>
     <p>This link will expire in 1 hour for security reasons.</p>
-    <p>Best regards,<br>Al-Noor Fans</p>
+    <p>Best regards,<br>DreamLots</p>
   </div>
   <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
@@ -99,38 +99,39 @@ const WELCOME_EMAIL = `<!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Al-Noor Fans</title>
+    <title>DreamLots Virtual Tours</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f9f9f9;">
     <div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px;">
         <div style="text-align: center; padding-bottom: 20px;">
-            <h1 style="color: #333; font-size: 24px; margin: 0;">Welcome to Al-Noor Fans, [User Name]!</h1>
+            <h1 style="color: #333; font-size: 24px; margin: 0;">DreamLots, [User Name]!</h1>
         </div>
         <div style="padding-bottom: 20px;">
             <p style="color: #555; line-height: 1.6;">Dear [User Name],</p>
-            <p style="color: #555; line-height: 1.6;">We are thrilled to have you join our community. At Al-Noor Fans, we are committed to providing high-quality products and exceptional service to ensure your complete satisfaction.</p>
+            <p style="color: #555; line-height: 1.6;">Thank you for signing up with Real Estate 360 Virtual Tours. We’re excited to bring you closer to your dream property with our immersive 360° virtual tours.</p>
             <p style="color: #555; line-height: 1.6;">Here’s what you can expect:</p>
             <ul style="color: #555; line-height: 1.6; padding-left: 20px; list-style-type: disc;">
-                <li><strong>Exclusive Offers:</strong> Get access to special promotions and discounts tailored just for you.</li>
-                <li><strong>Latest Updates:</strong> Stay informed about new products and innovations in our lineup.</li>
-                <li><strong>Dedicated Support:</strong> Our team is always here to assist you with any inquiries or concerns.</li>
+                <li><strong>Immersive Virtual Tours:</strong> Explore properties from the comfort of your home with high-quality 360° views.</li>
+                <li><strong>Exclusive Listings:</strong> Get access to properties that match your preferences, updated regularly.</li>
+                <li><strong>Personalized Assistance:</strong> Our team is here to guide you through the virtual tour process and assist you in finding the perfect property.</li>
             </ul>
-            <p style="color: #555; line-height: 1.6;">To get started, we recommend exploring our website and checking out our latest fan designs. If you have any questions or need assistance, feel free to reach out to our support team at <a href="mailto:support@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">support@alnoorfans.com</a></p>
-            <p style="color: #555; line-height: 1.6;">Thank you for choosing Al-Noor Fans. We look forward to serving you and making your experience with us exceptional!</p>
+            <p style="color: #555; line-height: 1.6;">To get started, we recommend exploring some of our featured properties on the website. If you need any help or have questions about the virtual tours, feel free to reach out to our support team at <a href="mailto:support@DreamLots.com" style="color: #1a73e8; text-decoration: none;">support@DreamLots.com</a></p>
+            <p style="color: #555; line-height: 1.6;">Thank you for choosing DreamLots. We’re here to help you make informed decisions and bring your property search to life!</p>
         </div>
         <div style="text-align: center; padding-top: 20px; border-top: 1px solid #e0e0e0;">
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Warm regards,</p>
-            <p style="color: #777; font-size: 14px; margin: 5px 0;">Al-Noor Fans Team</p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;">DreamLots Team</p>
             <p style="color: #777; font-size: 14px; margin: 5px 0;"><strong>Contact Us:</strong></p>
            
-            <p style="color: #777; font-size: 14px; margin: 5px 0;">Email: <a href="mailto:info@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">info@alnoorfans.com</a></p>
-            <p style="color: #777; font-size: 14px; margin: 5px 0;"><a href="mailto:support@alnoorfans.com" style="color: #1a73e8; text-decoration: none;">support@alnoorfans.com</a></p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;">Email: <a href="mailto:info@DreamLots.com" style="color: #1a73e8; text-decoration: none;">info@DreamLots.com</a></p>
+            <p style="color: #777; font-size: 14px; margin: 5px 0;"><a href="mailto:support@DreamLots.com" style="color: #1a73e8; text-decoration: none;">support@DreamLots.com</a></p>
             <p style="color: #777; font-size: 14px; margin: 5px 0;">WhatsApp: +92 336 3336024</p>
             <p style="color: #777; font-size: 14px; margin: 5px 0;">Landline: +92 53 3726024</p>
         </div>
     </div>
 </body>
 </html>
+
 `;
 
 const ORDER_CONFIRMATION = `
