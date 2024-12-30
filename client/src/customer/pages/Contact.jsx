@@ -322,10 +322,10 @@ const Contact = () => {
                     </Typography>
                     <List>
                       <ListItem sx={{ paddingY: 0.5 }}>
-                        <ListItemText primary={<a>info@alnoorfans.com</a>} />
+                        <ListItemText primary={<a>info@DreamLots.com</a>} />
                       </ListItem>
                       <ListItem sx={{ paddingY: 0.5 }}>
-                        <ListItemText primary={<a>support@alnoorfans.com</a>} />
+                        <ListItemText primary={<a>support@DreamLots.com</a>} />
                       </ListItem>
                     </List>
                   </Box>
@@ -339,8 +339,8 @@ const Contact = () => {
                       Our Address:
                     </Typography>
                     <List>
-                      <ListItem sx={{paddingY:0.5}}>
-                        <ListItemText primary="Al-Noor Electric Industries, 75-B, S.I.E, G.T Road, Gujrat, Punjab Pakistan" />
+                      <ListItem sx={{ paddingY: 0.5 }}>
+                        <ListItemText primary="DreamLots, 75-B, S.I.E, G.T Road, Gujrat, Punjab Pakistan" />
                       </ListItem>
                       <ListItem>
                         <ListItemText primary="Postal code 50700" />

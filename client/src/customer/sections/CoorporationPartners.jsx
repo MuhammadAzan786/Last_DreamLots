@@ -23,7 +23,7 @@ const CoorporationPartners = () => {
               fontWeight: "bold",
             }}
           >
-            Satisfied Customers{" "}
+            Satisfied <Buyers></Buyers>{" "}
           </Typography>
         </Box>
 

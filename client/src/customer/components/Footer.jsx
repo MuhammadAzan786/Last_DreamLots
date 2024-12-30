@@ -119,11 +119,11 @@ const Footer = () => {
                 </Typography>
                 <Box className="contact">
                   <ul>
-                    <li>Al-Noor Electric Industries</li>
+                    <li>DreamLots</li>
                     <li>75-B. S l, E. G. T. Road</li>
                     <li>Gujrat, Pakistan.</li>
-                    <li>info@alnoorfans.com</li>
-                    <li>support@alnoorfans.com</li>
+                    <li>info@DreamLots.com</li>
+                    <li>support@DreamLots.com</li>
                     <li>+92 336 3336024</li>
                   </ul>
                 </Box>
@@ -160,7 +160,7 @@ const Footer = () => {
             <Grid item xs={12}>
               <Box className="left">
                 <Typography variant="body2" color="inherit">
-                  Copyright © 2024 Al-Noor Fans<sup>TM</sup>
+                  Copyright © 2024 DreamLots<sup>TM</sup>
                   <Link target="_blank" color="inherit"></Link> - All Rights
                   Reserved. Developed by Muhammad Azan Afzal
                 </Typography>
